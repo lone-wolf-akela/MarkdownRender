@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Diagnostics;
 
 namespace Microsoft.PowerShell.MarkdownRender
 {
@@ -165,9 +166,15 @@ namespace Microsoft.PowerShell.MarkdownRender
                         }
                         else
                         {
-                            //renderer.WriteLine(renderer.EscapeSequences.FormatCode(codeLine.ToString(), isInline: false));
                             var lang = string.IsNullOrWhiteSpace(obj.Info) ? null : Languages.FindById(obj.Info);
-                            renderer.WriteLine(formatter.GetVT100String(codeLine.ToString(), lang));
+                            if (lang is null)
+                            {
+                                renderer.WriteLine(renderer.EscapeSequences.FormatCode(codeLine.ToString(), isInline: false));
+                            }
+                            else
+                            {
+                                renderer.WriteLine(formatter.GetVT100String(codeLine.ToString(), lang));
+                            }
                         }
                     }
                 }
