@@ -7,7 +7,7 @@
     <Company>Microsoft Corporation</Company>
     <Copyright>(c) Microsoft Corporation.</Copyright>
 
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <IsPackable>true</IsPackable>
 
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -25,7 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ColorCode.Core" Version="2.0.14" />
+    <PackageReference Include="Crayon" Version="2.0.69" />
     <PackageReference Include="Markdig" Version="0.31.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ColorCode.Console\ColorCode.Console.csproj" />
   </ItemGroup>
 </Project>
