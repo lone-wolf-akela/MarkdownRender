@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <PackageReference Include="Crayon" Version="2.0.69" />
-    <PackageReference Include="Markdig" Version="0.31.0" />
+    <PackageReference Include="Markdig" Version="0.33.0" />
   </ItemGroup>
 
   <ItemGroup>
